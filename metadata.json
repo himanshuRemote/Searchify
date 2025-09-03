@@ -1,0 +1,5 @@
+{
+  "name": "Searchify",
+  "description": "A Safari-style homepage that lets you choose your search destination after entering a query. Select from research articles, domain names, images, forums, or YouTube to be redirected to the appropriate search results.",
+  "requestFramePermissions": []
+}
