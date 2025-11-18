@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { SearchOption, OptionConfig } from './types';
-import { BookOpenIcon, GlobeAltIcon, PhotoIcon, ChatBubbleLeftRightIcon, PlayCircleIcon } from './components/icons';
+import { BookOpenIcon, GlobeAltIcon, PhotoIcon, ChatBubbleLeftRightIcon, PlayCircleIcon, SparklesIcon } from './components/icons';
 import SearchBar from './components/SearchBar';
 import OptionCard from './components/OptionCard';
 
@@ -35,6 +34,12 @@ const SEARCH_OPTIONS: OptionConfig[] = [
     title: 'YouTube', 
     urlTemplate: 'https://www.youtube.com/results?search_query={query}',
     icon: (props) => <PlayCircleIcon {...props} className="h-10 w-10" />
+  },
+  { 
+    id: SearchOption.AI, 
+    title: 'Ask AI', 
+    urlTemplate: 'https://www.perplexity.ai/search?q={query}',
+    icon: (props) => <SparklesIcon {...props} className="h-10 w-10" />
   },
 ];
 
@@ -81,7 +86,7 @@ export default function App() {
           <SearchBar onSearch={handleSearchSubmit} initialQuery={query || ''} />
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 w-full mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full mt-8">
           {SEARCH_OPTIONS.map((option) => (
             <OptionCard
               key={option.id}

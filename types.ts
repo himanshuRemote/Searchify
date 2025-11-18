@@ -1,3 +1,5 @@
+// FIX: Import React to resolve 'Cannot find namespace React' error.
+import React from 'react';
 
 export enum SearchOption {
   Research = 'Research',
@@ -5,6 +7,7 @@ export enum SearchOption {
   Images = 'Images',
   Forums = 'Forums',
   YouTube = 'YouTube',
+  AI = 'AI',
 }
 
 export interface OptionConfig {
