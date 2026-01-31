@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { SearchOption, OptionConfig } from './types';
 import { BookOpenIcon, GlobeAltIcon, PhotoIcon, ChatBubbleLeftRightIcon, PlayCircleIcon, SparklesIcon } from './components/icons';
@@ -18,16 +19,16 @@ const SEARCH_OPTIONS: OptionConfig[] = [
     icon: (props) => <GlobeAltIcon {...props} className="h-10 w-10" />
   },
   { 
-    id: SearchOption.Images, 
-    title: 'Images', 
-    urlTemplate: 'https://www.google.com/search?tbm=isch&q={query}',
-    icon: (props) => <PhotoIcon {...props} className="h-10 w-10" />
-  },
-  { 
     id: SearchOption.Forums, 
     title: 'Forums & Discussions', 
     urlTemplate: 'https://www.google.com/search?udm=18&q={query}',
     icon: (props) => <ChatBubbleLeftRightIcon {...props} className="h-10 w-10" />
+  },
+  { 
+    id: SearchOption.Images, 
+    title: 'Images', 
+    urlTemplate: 'https://www.google.com/search?tbm=isch&q={query}',
+    icon: (props) => <PhotoIcon {...props} className="h-10 w-10" />
   },
   { 
     id: SearchOption.YouTube, 
