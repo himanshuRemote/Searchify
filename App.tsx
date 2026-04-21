@@ -13,12 +13,6 @@ const SEARCH_OPTIONS: OptionConfig[] = [
     icon: (props) => <BookOpenIcon {...props} className="h-10 w-10" />
   },
   { 
-    id: SearchOption.Domain, 
-    title: 'Domain Names', 
-    urlTemplate: 'https://www.google.com/search?q={query}&udm=14',
-    icon: (props) => <GlobeAltIcon {...props} className="h-10 w-10" />
-  },
-  { 
     id: SearchOption.Forums, 
     title: 'Forums & Discussions', 
     urlTemplate: 'https://www.google.com/search?udm=18&q={query}',
@@ -29,6 +23,12 @@ const SEARCH_OPTIONS: OptionConfig[] = [
     title: 'Images', 
     urlTemplate: 'https://www.google.com/search?tbm=isch&q={query}',
     icon: (props) => <PhotoIcon {...props} className="h-10 w-10" />
+  },
+  { 
+    id: SearchOption.Domain, 
+    title: 'Domain Names', 
+    urlTemplate: 'https://www.google.com/search?q={query}&udm=14',
+    icon: (props) => <GlobeAltIcon {...props} className="h-10 w-10" />
   },
   { 
     id: SearchOption.YouTube, 
