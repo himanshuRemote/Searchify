@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { SearchOption, OptionConfig } from './types';
 import { BookOpenIcon, GlobeAltIcon, PhotoIcon, ChatBubbleLeftRightIcon, PlayCircleIcon, SparklesIcon } from './components/icons';
 import SearchBar from './components/SearchBar';
@@ -45,8 +45,19 @@ const SEARCH_OPTIONS: OptionConfig[] = [
 ];
 
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
 export default function App() {
   const [query, setQuery] = useState<string | null>(null);
+
+  const shuffledOptions = useMemo(() => shuffleArray(SEARCH_OPTIONS), []);
 
   useEffect(() => {
     // On initial load, check for a query in the URL hash
@@ -88,7 +99,7 @@ export default function App() {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full mt-8">
-          {SEARCH_OPTIONS.map((option) => (
+          {shuffledOptions.map((option) => (
             <OptionCard
               key={option.id}
               title={option.title}
